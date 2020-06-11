@@ -1,0 +1,26 @@
+﻿<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <MSBuildCommunityTasksPath>$(MSBuildProjectDirectory)\.build</MSBuildCommunityTasksPath>
+    <NexusGuid>58433a2c-cbbc-48ca-8ba5-b4ff55dcf280</NexusGuid>
+    <Nupkg>$(MSBuildProjectDirectory)\artifact\nupkg</Nupkg>
+    <WebPublishFiles>$(MSBuildProjectDirectory)\artifact\web-publish-files</WebPublishFiles>
+    <NunitResultsXml>$(MSBuildProjectDirectory)\TestResults.xml</NunitResultsXml>
+    <BAMBOO_planRepository_branch Condition="'$(BAMBOO_planRepository_branch)' == '' ">Not Defined</BAMBOO_planRepository_branch>
+    <BAMBOO_planRepository_revision Condition="'$(BAMBOO_planRepository_revision)' == '' ">Not Defined</BAMBOO_planRepository_revision>
+    <BAMBOO_planRepository_repositoryUrl Condition="'$(BAMBOO_planRepository_repositoryUrl)' == '' ">Not Defined</BAMBOO_planRepository_repositoryUrl>
+    <BAMBOO_resultsUrl Condition="'$(BAMBOO_resultsUrl)' == '' ">Not Defined</BAMBOO_resultsUrl>
+    <BAMBOO_Version Condition="'$(BAMBOO_Version)' == '' ">1.0.0</BAMBOO_Version>
+    <BAMBOO_buildNumber Condition="'$(BAMBOO_buildNumber)' == '' ">0</BAMBOO_buildNumber>
+    <Version Condition="'$(Version)' == '' ">$(BAMBOO_Version)</Version>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    <ReleaseBranch>release</ReleaseBranch>
+    <HotFixBranch>hotfix</HotFixBranch>
+  </PropertyGroup>
+
+  <Target Name="HelloWorld">
+    <Message Text="Hello"></Message>
+    <Message Text="World"></Message>
+  </Target>
+
+</Project>
